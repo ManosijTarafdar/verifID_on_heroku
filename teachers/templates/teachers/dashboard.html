@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <link rel="stylesheet" href="{% static 'css/dashstyle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navBar">
+            <div class="site-title">
+                <h1>verifID</h1>
+                <p class="sub-title">DASHBOARD</p>
+            </div>
+            <nav>
+                <ul>
+                    <li class="welcome-text">Welcome, {{ request.user.first_name }}</li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container-main">
+            <div class="column col-1">
+                <div class="display">
+                    <img src="{{profilepicture}}" alt="" class="profile-pic">
+                    <div class="sub-section">
+                        <h2>ID : {{cid}}</h2>
+                        <h2>Name : {{fullname}}</h2>
+                        <h2>Designation : {{designation}}</h2>
+                        <h2>Department : {{department}}</h2>
+                    </div>
+                    <!-- <div class="profile-pic-button">
+                        <a href="#"><button type="submit" class="btn1">Change Profile Picture</button></a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="column col-2">
+                <div class="options">
+                    <a href="{% url 'myId' %}"><button type="submit">My ID</button></a>
+                    <a href="{% url 'routineTeacher' %}"><button type="submit">My Routine</button></a>
+                    <a href="{% url 'recordAttendance' %}"><button type="submit">Attendance</button></a>
+                    <a href="{% url 'archive' %}"><button type="submit">Archive Attendance</button></a>
+                    <a href="{% url 'postAnnouncement' %}"><button type="submit">Post Announcement</button></a>
+                    <a href="{% url 'postAssignment' %}"><button type="submit">Post Assignment</button></a>
+                </div>
+            </div>
+            <div class="column col-3">
+                <div class="options">
+                    <a href="{% url 'updateProfile' %}"><button type="submit">Update Phone & Address</button></a>
+                    <a href="{% url 'updatePassword' %}"><button type="submit">Reset Password</button></a>
+                    <a href="{% url 'adminMessage' %}"><button type="submit">Message Admin</button></a>
+                    <!-- <a href="#"><button type="submit">Post Assignment</button></a> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><strong>Copyrights towards verifID 2022</strong></p>
+    </footer>
+</body>
+</html>

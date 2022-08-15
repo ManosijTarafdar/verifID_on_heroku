@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="checkbox" name="teacher" value="True">I'm a Teacher
+        &ensp;
+        <input type="checkbox" name="student" value="True">I'm a Student
+        <br>
+        <input type="text" placeholder="First Name" name="fname">
+        <input type="text" placeholder="Last Name" name="lname">
+        <br>
+        <input type="email" placeholder="Email" name="email">
+        <input type="text" placeholder="College ID" name="collegeid">
+        <br>
+        <input type="text" placeholder="Designation" name="designation">
+        <input type="text" placeholder="Department" name="department">
+        <br>
+        <input type="number" placeholder="Phone" name="phone">
+        <br>
+        <input type="text" placeholder="Address" name="address">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

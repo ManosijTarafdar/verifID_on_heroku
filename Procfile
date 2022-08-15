@@ -1,0 +1,1 @@
+web: gunicorn verifID.wsgi --log-file -

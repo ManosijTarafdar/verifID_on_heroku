@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIN</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<style>
+    .col-1{
+        background-image: url("{% static '/images/image1.jpg' %}");
+    }
+    @keyframes slide{
+    50%{
+        background-image: url("{% static '/images/image.jpg' %}");
+    }
+  }
+</style>
+<body>
+    <header>
+        <div class="navBar">
+            <div class="site-title">
+                <h1>use verifID</h1>
+                <p class="sub-title">A new way to verify</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container-main">
+            <div class="column col-1">
+            </div>
+            <div class="column col-2">
+                <div class="main-form">
+                    <div class="form-title">
+                        <h2>LogIN to continue.</h2>
+                    </div>
+                    <div class="login-form">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <p>Enter Username</p>
+                            <input type="text" class="login-form-text" name="username" autofocus>
+                            <p>Enter Password</p>
+                            <input type="password" name="password" id=""  class="login-form-text">
+                            <button type="submit" style="cursor: pointer;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="fooBar">
+            <h5>Copyrights and MIT License towards <a href="https://github.com/ManosijTarafdar/verifID">verifID</a> project.</h5>
+        </div>
+    </footer>
+</body>
+
+</html>

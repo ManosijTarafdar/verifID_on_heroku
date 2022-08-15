@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="{% static 'css/assignmentsstyle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navBar">
+            <div class="site-title">
+                <h1>verifID</h1>
+                <p class="sub-title">ASSIGNMENTS</p>
+            </div>
+            <nav>
+                <ul>
+                    <!-- <li class="welcome-text">Welcome, Manosij</li> -->
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container-main">
+            <div class="notetext">
+                <p><strong>NOTE:</strong>This is beta-testing.So image files are compatible only.</p>
+            </div>
+            <div class="search">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Enter subject code:" style="height:25px;margin-bottom:7px;" name="subjectcode">
+                    <input type="text" placeholder="Describe" style="height: 150px;" name="aboutannc">
+                    <label for="dosub" style="padding-left: 24.5%;font-weight: 500;font-size: 20px;">Date of Submission:</label>
+                    <input type="date" name="dos" id="dosub" style="margin-top: 5px;">
+                    <input type="file" name="asgimg" id="" style="margin-top: 10px;border-radius: 0;font-size: 15px;">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><strong>Copyrights towards verifID 2022</strong></p>
+    </footer>
+</body>
+</html>

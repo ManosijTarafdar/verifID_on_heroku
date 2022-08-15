@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav</title>
+    <link rel="stylesheet" href="{% static 'css/routinestyle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navBar">
+            <div class="site-title">
+                <h1>verifID</h1>
+                <p class="sub-title">your ROUTINE</p>
+            </div>
+            <nav>
+                <ul>
+                    <!-- <li class="welcome-text">Welcome, Manosij</li> -->
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container-main">
+            <div class="column col-1">
+                <div class="display">
+                    <img src="{{ url }}" alt="">
+                </div>
+            </div>
+            <div class="column col-2">
+                <div class="options">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Download" name="download_routine">
+                        <input type="submit" value="Reschedule" name="reschedule_routine">     
+                    </form>
+                    <!-- <a href="#"><button type="submit">Attendance</button></a>
+                    <a href="#"><button type="submit">Archive Attendance</button></a>
+                    <a href="#"><button type="submit">Post Announcement</button></a>
+                    <a href="#"><button type="submit">Post Assignment</button></a> -->
+                </div>
+            </div>
+            <!-- <div class="column col-3">
+                <div class="options">
+                    <a href="#"><button type="submit">Update Profile</button></a>
+                    <a href="#"><button type="submit">Reset Password</button></a>
+                    <a href="#"><button type="submit">Message Admin</button></a>
+                    <a href="#"><button type="submit">Post Assignment</button></a> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><strong>Copyrights towards verifID 2022</strong></p>
+    </footer>
+</body>
+</html>

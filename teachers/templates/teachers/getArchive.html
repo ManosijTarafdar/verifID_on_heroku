@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive</title>
+    <link rel="stylesheet" href="{% static 'css/archivestyle.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navBar">
+            <div class="site-title">
+                <h1>verifID</h1>
+                <p class="sub-title">your ARCHIVE</p>
+            </div>
+            <nav>
+                <ul>
+                    <!-- <li class="welcome-text">Welcome, Manosij</li> -->
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container-main">
+            <div class="search">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Enter subject code" name="subjectcode">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><strong>Copyrights towards verifID 2022</strong></p>
+    </footer>
+</body>
+</html>

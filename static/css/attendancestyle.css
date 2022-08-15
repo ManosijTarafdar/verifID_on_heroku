@@ -1,0 +1,140 @@
+body{
+    margin: 0;
+    font-family: consolas;
+    height: 100vh;
+}
+
+h1{
+    font-family:monospace;
+    font-weight: 800;
+    font-size: 30px;
+    color: #143774;
+    margin: 0;
+}
+.sub-title{
+    font-size: 1rem;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    color:#1b4a63;
+    text-align: center;
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+}
+
+header{
+    padding: 1em 0;
+    background-color: rgb(213, 230, 241);
+}
+
+@media (max-width:675px){
+    .navBar{
+        flex-direction: column;
+    }
+    header{
+        text-align: center;
+    }
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+nav li{
+    margin-left:3em;
+}
+
+.welcome-text{
+    font-weight: 700;
+    color: #1b4a63;
+    font-size: 1.5rem;
+}
+
+nav a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #707070;
+    font-size: 1.5rem;
+}
+
+nav a:hover{
+    border-bottom: 3px solid crimson;
+    color: crimson;
+}
+
+.container-main{
+    margin: 0 auto;
+    min-height: 74vh;
+    width: 98%;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* border: 2px solid blue; */
+  }
+
+.notetext{
+    /* border: 2px solid red; */
+    text-align: center;
+    color:crimson;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.search{
+    /* border: 2px solid red; */
+    margin: auto auto;
+    width: 50%;
+    height: 50%;
+    /* font-family: monospace; */
+}
+
+.search input{
+    width: 50%;
+    /* width: 100px; */
+    font-family: monospace;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    margin: 0 auto;
+    height: 200px;
+    /* border: 2px solid green; */
+}
+
+button{
+    display: flex;
+    background-color: #143774;
+    color: whitesmoke;
+    font-family: consolas;
+    padding: 5px;
+    width: 100px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    margin: 5px auto;
+    justify-content: center;
+}
+
+button:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bolder;
+    background-color:aliceblue;
+    color: #1b4a63;
+}
+
+footer{
+    padding: 6px;
+    background-color: rgb(213, 230, 241);
+    color:#00004d;
+    text-align: center;
+    font-family: consolas;
+    font-size: 18px;
+}
