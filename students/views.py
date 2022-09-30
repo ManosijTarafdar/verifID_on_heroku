@@ -47,23 +47,23 @@ def makeid(request):
     studentDataObject = StudentData.objects.all().get(email = request.user.email)
     # make qr
     qr_img = qrcode.make(studentDataObject.collegeid) 
-    os.chdir(os.path.join(HOME_DIR+"\\etc"))
-    qr_img.save("qr.jpg")
+    # os.chdir(os.path.join(HOME_DIR+"\\etc"))
+    qr_img.save("etc/qr.jpg")
     # # make idcard
-    template = Image.open("template.png")
+    template = Image.open("etc/template.png")
     draw = ImageDraw.Draw(template)
-    font = ImageFont.truetype("Ubuntu-Regular.ttf",size=26)
+    font = ImageFont.truetype("etc/Ubuntu-Regular.ttf",size=26)
     draw.text((366,245),dt.now().strftime('%d/%m/%Y'),fill = "black",font=font)
     nameOfUser = studentDataObject.firstname + " " + studentDataObject.lastname
     draw.text((376,115),nameOfUser,fill = "black",font=font)
     draw.text((473,160),"STUDENT",fill = "black",font=font)
-    draw.text((371,210),studentDataObject.department,fill = "black",font=ImageFont.truetype("Ubuntu-Regular.ttf",size=20))
-    pic = Image.open('qr.jpg').resize((196,218),Image.ANTIALIAS)
+    draw.text((371,210),studentDataObject.department,fill = "black",font=ImageFont.truetype("etc/Ubuntu-Regular.ttf",size=20))
+    pic = Image.open('etc/qr.jpg').resize((196,218),Image.ANTIALIAS)
     template.paste(pic,(61,116,257,334))
-    template.save("idCard.png")
+    template.save("etc/idCard.png")
     fireStoreObject = teacherView.fireStore()
     path = request.user.first_name + request.user.last_name + "/idCard.png"
-    fireStoreObject.child(path).put("idCard.png")
+    fireStoreObject.child(path).put("etc/idCard.png")
     fname = request.user.first_name
     lname = request.user.last_name
     teacherName = fname + lname
