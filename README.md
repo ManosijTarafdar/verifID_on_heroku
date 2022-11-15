@@ -41,6 +41,7 @@ Assignment System to work with.
 ## Author
 
 - Manosij Tarafdar , CSE 2019-23 , MCKV Institute of Engineering
+- Debjani Banerjee
 
 
 ## Support
